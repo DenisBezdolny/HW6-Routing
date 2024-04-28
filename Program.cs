@@ -1,7 +1,15 @@
+using HW6_Routing.DataManager;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<CountryContext>(x => x.UseSqlServer(connection));
+
+
 
 var app = builder.Build();
 
