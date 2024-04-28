@@ -1,4 +1,6 @@
 using HW6_Routing.DataManager;
+using HW6_Routing.Services;
+using HW6_Routing.Services.Abstract_lvl;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,7 @@ builder.Services.AddControllersWithViews();
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<CountryContext>(x => x.UseSqlServer(connection));
 
+builder.Services.AddTransient<ICountryService, CountryService>();
 
 
 var app = builder.Build();
