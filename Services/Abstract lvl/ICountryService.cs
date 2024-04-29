@@ -4,10 +4,6 @@ namespace HW6_Routing.Services.Abstract_lvl
 {
     public interface ICountryService
     {
-        public List<Country> GetCountries();
-        public Country GetCountry(int countryId);
-        public City GetCity(int countryId, int cityId);
-
-
+        public List<int> GetPopulation(string name, string? name2, string? name3);
     }
 }

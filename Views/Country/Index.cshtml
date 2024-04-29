@@ -1,0 +1,12 @@
+﻿@using HW6_Routing.Controllers;
+
+<h1>Выберите действие</h1>
+
+<div class="buttons">
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("GetCountries", "Country")'">
+        Страны
+    </button>
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("GetCities", "Country")'">
+        Города
+    </button>
+</div>
